@@ -1,42 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>dashboard</class>
- <widget class="QWidget" name="dashboard">
+ <class>Dashboard</class>
+ <widget class="QWidget" name="Dashboard">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>499</width>
-    <height>403</height>
+    <width>860</width>
+    <height>564</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Main Window</string>
+   <string notr="true">Payroll App by Barry Prinsloo — Dashboard</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lblCompany">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>10</y>
-     <width>181</width>
-     <height>31</height>
+     <x>20</x>
+     <y>14</y>
+     <width>560</width>
+     <height>28</height>
     </rect>
    </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
    <property name="frameShape">
-    <enum>QFrame::Shape::Box</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
+    <enum>QFrame::Shape::NoFrame</enum>
    </property>
    <property name="text">
-    <string>Welcome to Payroll System</string>
+    <string>Company Name</string>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>14</y>
+     <width>140</width>
+     <height>28</height>
+    </rect>
    </property>
+   <property name="text">
+    <string>◀  Change Company</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>52</y>
+     <width>840</width>
+     <height>490</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="tabEmployees">
+    <attribute name="title">
+     <string>Employees</string>
+    </attribute>
+    <widget class="QLineEdit" name="txtSearch">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>260</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Search by name, number or department…</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAddEmployee">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>10</y>
+       <width>120</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+ Add Employee</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tblEmployees">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>48</y>
+       <width>810</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>Emp #</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Full Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Job Title</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Department</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Salary / Rate</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Pay Freq.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Start Date</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="btnEditEmployee">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>418</y>
+       <width>120</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Edit Selected</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDeactivate">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>418</y>
+       <width>140</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Deactivate Selected</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabTimesheets">
+    <attribute name="title">
+     <string>Timesheets</string>
+    </attribute>
+    <widget class="QLabel" name="lblTimesheetSoon">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>200</y>
+       <width>240</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Timesheets coming in the next step.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>

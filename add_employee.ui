@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddEmployee</class>
+ <widget class="QWidget" name="AddEmployee">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>565</width>
+    <height>880</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Payroll App by Barry Prinsloo — Add Employee</string>
+  </property>
+  <widget class="QLabel" name="lblTitle">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>16</y>
+     <width>500</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <property name="text">
+    <string>Add Employee</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSecPersonal">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>62</y>
+     <width>500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>── Personal Details ──────────────────────────────────────</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEmpNum">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>86</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Employee Number *</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEmployeeNumber">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>104</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. EMP001</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFullName">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>86</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Full Name *</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtFullName">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>104</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>As per ID document</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblIdNumber">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>144</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SA ID Number</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtIdNumber">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>162</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>13-digit ID number</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTaxNumber">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>144</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Tax Number (SARS)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtTaxNumber">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>162</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>10-digit SARS number</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPhone">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>196</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Phone Number</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtPhone">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>214</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. 082 123 4567</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEmail">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>196</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Email Address</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEmail">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>214</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>employee@email.com</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSecEmployment">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>256</y>
+     <width>500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>── Employment Details ────────────────────────────────────</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblJobTitle">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>280</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Job Title</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtJobTitle">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>298</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. Technician</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDepartment">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>280</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Department</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtDepartment">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>298</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. Maintenance</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEmpType">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>338</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Employment Type</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbEmploymentType">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>356</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Permanent</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Fixed Term</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Part-time</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Contractor</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblPayFreq">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>338</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pay Frequency</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbPayFrequency">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>356</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Monthly</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bi-weekly</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Weekly</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblStartDate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>396</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start Date</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dtStartDate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>414</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>yyyy-MM-dd</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEndDate">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>396</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>End Date (fixed term only)</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dtEndDate">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>414</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="specialValueText">
+    <string>No end date</string>
+   </property>
+   <property name="displayFormat">
+    <string>yyyy-MM-dd</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSecSalary">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>456</y>
+     <width>500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>── Salary ────────────────────────────────────────────────</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSalaryType">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>480</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Salary Type</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbSalaryType">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>498</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Monthly</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Hourly</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblMonthlySalary">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>480</y>
+     <width>140</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Monthly Salary (R)</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="spnMonthlySalary">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>498</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="prefix">
+    <string>R </string>
+   </property>
+   <property name="decimals">
+    <number>2</number>
+   </property>
+   <property name="maximum">
+    <double>999999.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblHourlyRate">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>480</y>
+     <width>140</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Hourly Rate (R)</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="spnHourlyRate">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>498</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="prefix">
+    <string>R </string>
+   </property>
+   <property name="decimals">
+    <number>2</number>
+   </property>
+   <property name="maximum">
+    <double>9999.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chkUifExempt">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>538</y>
+     <width>200</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>UIF Exempt (e.g. contractor)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSecBank">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>572</y>
+     <width>500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>── Banking Details ───────────────────────────────────────</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBankName">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>596</y>
+     <width>80</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bank Name</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbBankName">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>614</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ABSA</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Capitec</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>FNB</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nedbank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Standard Bank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Investec</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>African Bank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>TymeBank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Discovery Bank</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Other</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblAccType">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>596</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Account Type</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbAccountType">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>614</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Cheque / Current</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Savings</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Transmission</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblAccNumber">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>654</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Account Number</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtAccountNumber">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>672</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Bank account number</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBranchCode">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>654</y>
+     <width>100</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Branch Code</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtBranchCode">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>672</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. 632005</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSecEmergency">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>712</y>
+     <width>500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>── Emergency Contact ─────────────────────────────────────</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEmergencyName">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>736</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Contact Name</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEmergencyContact">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>754</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Full name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEmergencyPhone">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>736</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Contact Phone</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEmergencyPhone">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>754</y>
+     <width>220</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. 083 456 7890</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSave">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>796</y>
+     <width>500</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save Employee</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCancel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>840</y>
+     <width>500</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PayrollLogin</class>
- <widget class="QWidget" name="PayrollLogin">
+ <class>RegisterWindow</class>
+ <widget class="QWidget" name="RegisterWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>434</width>
-    <height>428</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">Payroll App by Barry Prinsloo — Login</string>
+   <string notr="true">Payroll App by Barry Prinsloo — Create Account</string>
   </property>
   <widget class="QLabel" name="lblTitle">
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>30</y>
+     <y>40</y>
      <width>200</width>
      <height>36</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>18</pointsize>
+     <pointsize>16</pointsize>
     </font>
    </property>
    <property name="autoFillBackground">
@@ -37,7 +37,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
    <property name="text">
-    <string>Payroll Login</string>
+    <string>Create Account</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -47,7 +47,7 @@
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>88</y>
+     <y>96</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -60,7 +60,7 @@
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>110</y>
+     <y>118</y>
      <width>200</width>
      <height>30</height>
     </rect>
@@ -69,14 +69,43 @@
     <string/>
    </property>
    <property name="placeholderText">
-    <string>Enter username</string>
+    <string>Choose a username</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEmail">
+   <property name="geometry">
+    <rect>
+     <x>117</x>
+     <y>160</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Email (optional)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtEmail">
+   <property name="geometry">
+    <rect>
+     <x>117</x>
+     <y>182</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>your@email.com</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblPassword">
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>152</y>
+     <y>224</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -89,7 +118,7 @@
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>174</y>
+     <y>246</y>
      <width>200</width>
      <height>30</height>
     </rect>
@@ -101,100 +130,68 @@
     <enum>QLineEdit::EchoMode::Password</enum>
    </property>
    <property name="placeholderText">
-    <string>Enter password</string>
+    <string>Choose a password</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnLogin">
+  <widget class="QLabel" name="lblConfirm">
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>222</y>
-     <width>200</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Login</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblOr">
-   <property name="geometry">
-    <rect>
-     <x>117</x>
-     <y>266</y>
-     <width>200</width>
+     <y>288</y>
+     <width>120</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Don't have an account?</string>
+    <string>Confirm Password</string>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
+  </widget>
+  <widget class="QLineEdit" name="txtConfirm">
+   <property name="geometry">
+    <rect>
+     <x>117</x>
+     <y>310</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::EchoMode::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>Repeat password</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnRegister">
    <property name="geometry">
     <rect>
      <x>117</x>
-     <y>288</y>
+     <y>356</y>
      <width>200</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>Create Account</string>
+    <string>Register</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QPushButton" name="btnBack">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>340</y>
-     <width>71</width>
-     <height>71</height>
+     <x>117</x>
+     <y>396</y>
+     <width>200</width>
+     <height>34</height>
     </rect>
    </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::Box</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
    <property name="text">
-    <string/>
+    <string>Back to Login</string>
    </property>
-   <property name="pixmap">
-    <pixmap>image.jpg</pixmap>
-   </property>
-   <property name="scaledContents">
+   <property name="flat">
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>340</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Developed by</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>360</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Barry Prinsloo</string>
    </property>
   </widget>
  </widget>
