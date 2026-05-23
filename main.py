@@ -9,6 +9,7 @@ from PySide6.QtCore import QFile, QDate, QTime, Qt   # ← Qt added here
 from PySide6.QtGui import QColor
 
 import database
+import payslip as payslip_module
 
 # ---------------------------------------------------------------------------
 # Helper
@@ -314,6 +315,12 @@ class EmployeeDetailsWindow:
 
         self.window.btnClose.clicked.connect(self.close)
         self.window.btnSaveTimesheet.clicked.connect(self.save_timesheet_changes)
+        self.window.btnPrintPayslip.clicked.connect(self.print_payslip)
+
+        # Default payslip period to current month/year
+        today = QDate.currentDate()
+        self.window.cmbPayslipMonth.setCurrentIndex(today.month() - 1)  # 0-based
+        self.window.spnPayslipYear.setValue(today.year())
 
         self.display_employee_info()
         self.load_all_timesheets()
@@ -417,6 +424,67 @@ class EmployeeDetailsWindow:
 
         QMessageBox.information(self.window, "Success", "Timesheet changes saved successfully!")
         self.load_all_timesheets()  # Refresh table
+
+    def print_payslip(self):
+        """Generate a PDF payslip for the selected pay period and open it."""
+        import os, subprocess, sys
+        from PySide6.QtWidgets import QFileDialog
+
+        month = self.window.cmbPayslipMonth.currentIndex() + 1  # 1-based
+        year  = self.window.spnPayslipYear.value()
+
+        # Fetch timesheets for this period
+        timesheets = payslip_module.get_timesheets_for_period(
+            self.company["id"], self.employee["id"], year, month
+        )
+
+        # Calculate figures
+        figures = payslip_module.calculate_payslip_figures(
+            self.employee, timesheets, year, month
+        )
+
+        # Suggest a sensible default filename
+        safe_name = self.employee.get("full_name", "employee").replace(" ", "_")
+        default_filename = f"Payslip_{safe_name}_{year}_{month:02d}.pdf"
+
+        # Ask where to save
+        path, _ = QFileDialog.getSaveFileName(
+            self.window,
+            "Save Payslip PDF",
+            os.path.join(os.path.expanduser("~"), default_filename),
+            "PDF Files (*.pdf)"
+        )
+        if not path:
+            return  # user cancelled
+
+        try:
+            payslip_module.generate_payslip(
+                company     = dict(self.company),
+                employee    = self.employee,
+                year        = year,
+                month       = month,
+                figures     = figures,
+                output_path = path,
+            )
+        except Exception as e:
+            QMessageBox.critical(self.window, "Error", f"Failed to generate payslip:\n{e}")
+            return
+
+        # Open the PDF with the default viewer
+        try:
+            if sys.platform.startswith("win"):
+                os.startfile(path)
+            elif sys.platform == "darwin":
+                subprocess.Popen(["open", path])
+            else:
+                subprocess.Popen(["xdg-open", path])
+        except Exception:
+            pass  # viewer launch is best-effort
+
+        QMessageBox.information(
+            self.window, "Payslip Generated",
+            f"Payslip saved to:\n{path}"
+        )
 
     def close(self):
         self.window.close()

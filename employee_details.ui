@@ -13,7 +13,6 @@
   <property name="windowTitle">
    <string notr="true">Payroll App by Barry Prinsloo — Employee Details</string>
   </property>
-
   <widget class="QLabel" name="lblTitle">
    <property name="geometry">
     <rect>
@@ -35,7 +34,6 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
@@ -45,7 +43,6 @@
      <height>520</height>
     </rect>
    </property>
-
    <widget class="QWidget" name="tabInfo">
     <attribute name="title">
      <string>Personal &amp; Employment Info</string>
@@ -64,15 +61,14 @@
        <pointsize>10</pointsize>
       </font>
      </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignTop</set>
      </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
-
    <widget class="QWidget" name="tabTimesheet">
     <attribute name="title">
      <string>Timesheet History (Editable)</string>
@@ -127,14 +123,125 @@
     </widget>
    </widget>
   </widget>
-
+  <widget class="QLabel" name="lblPayslipPeriod">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>606</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Payslip Period:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbPayslipMonth">
+   <property name="geometry">
+    <rect>
+     <x>125</x>
+     <y>602</y>
+     <width>130</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>January</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>February</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>March</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>April</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>May</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>June</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>July</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>August</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>September</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>October</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>November</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>December</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QSpinBox" name="spnPayslipYear">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>602</y>
+     <width>121</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>2020</number>
+   </property>
+   <property name="maximum">
+    <number>2099</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnPrintPayslip">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>602</y>
+     <width>200</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>🖨 Print Payslip (PDF)</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="btnClose">
    <property name="geometry">
     <rect>
      <x>760</x>
-     <y>610</y>
+     <y>602</y>
      <width>140</width>
-     <height>40</height>
+     <height>36</height>
     </rect>
    </property>
    <property name="text">
